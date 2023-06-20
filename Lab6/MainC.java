@@ -7,38 +7,58 @@ public class MainC{
         Scanner in = new Scanner(System.in);
 
         //Var declarations
-        double userMeters = 0;
-        double conMiles = 0;
-        double conFeet = 0;
-        double conInches = 0;
-        boolean conBool;
+        double rectW = 0;
+        double rectL = 0;
+        double rectArea = 0;
+        double rectPer = 0;
+        double rectDiag = 0;
+        boolean rectBool;
 
-        //variable checker for user inputted meters
+        //variable checker for rectangle length
         do{
-            conBool = false; //sets conBool to false for initial test
+            rectBool = false; //sets rectBool to false for initial test
             try{
-                System.out.println("Input how many meters: ");
-                userMeters = in.nextDouble(); //input for meters
+                System.out.println("Input length of rectangle: ");
+                rectL = in.nextDouble(); //input for length
                 //conversion output
-                System.out.println("You've entered': " + userMeters);
-                conBool = false; //do while breaker
+                System.out.println("Your rectangle length is: " + rectL);
+                rectBool = false; //do while breaker
             }
             catch (Exception e){ //exeption handler
-                conBool = true;
+                rectBool = true;
                 System.out.println("Wrong input detected, try again. \nInput your length: ");
                 in.next(); //re input
             }
         }
-        while (conBool);
+        while (rectBool);
 
-        //calculation
-        conMiles = userMeters / 1609;
-        conFeet = userMeters * 3.28084;
-        conInches = userMeters * 39.3701;
+        //variable checker for Width
+        do{
+            rectBool = false; //sets rectBool to false for initial test
+            try{
+                System.out.println("Input width of rectange: ");
+                rectW = in.nextDouble(); //input for width
+                //conversion output
+                System.out.println("Your rectangle width is: " + rectW);
+                rectBool = false; //do while breaker
+            }
+            catch (Exception e){ //exeption handler
+                rectBool = true;
+                System.out.println("Wrong input detected, try again. \nInput your width: ");
+                in.next(); //re input
+            }
+        }
+        while (rectBool);
 
-        //Outputs
-        System.out.println(userMeters + " meters, is " + conMiles + " miles");
-        System.out.println(userMeters + " meters, is " + conFeet + " feet");
-        System.out.println(userMeters + " meters, is " + conInches + " inche(s)");
+        //Calculations
+        rectArea = rectL * rectW;
+        rectPer = (2 * rectL) + (2 * rectW);
+        rectDiag = Math.sqrt((Math.pow(rectW, 2)) + (Math.pow(rectL, 2)));
+
+        //output
+        System.out.println("The area of your rectangle is " + rectArea);
+        System.out.println("The perimeter of your rectangle is " + rectPer);
+        System.out.println("The diagonal of your rectangle is " + rectDiag);
+
     }
 }
