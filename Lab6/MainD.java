@@ -38,6 +38,6 @@ public class MainD{
         //Outputs
         System.out.println(userMeters + " meters, is " + conMiles + " miles");
         System.out.println(userMeters + " meters, is " + conFeet + " feet");
-        System.out.println(userMeters + " meters, is " + conInches + " inche(s)");
+        System.out.println(userMeters + " meters, is " + conInches + " inches");
     }
 }
